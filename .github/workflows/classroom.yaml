@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Autograding test 0
         id: assign60
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '60% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'
@@ -24,7 +24,7 @@ jobs:
           max-score: 60
       - name: Autograding test 1
         id: assign70
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '70% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'
@@ -33,7 +33,7 @@ jobs:
           max-score: 70
       - name: Autograding test 2
         id: assign80
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '80% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'
@@ -42,7 +42,7 @@ jobs:
           max-score: 80
       - name: Autograding test 3
         id: assign90
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '90% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'
@@ -51,7 +51,7 @@ jobs:
           max-score: 90
       - name: Autograding test 4
         id: assign95
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '95% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'
@@ -60,7 +60,7 @@ jobs:
           max-score: 95
       - name: Autograding test 5
         id: assign100
-        uses: classroom-resources/autograding-python-grader@v1
+        uses: classroom-resources/autograding-command-grader@v1
         with:
           test-name: '100% credit'
           setup-command: 'pip3 install -r .grader/requirements.txt'

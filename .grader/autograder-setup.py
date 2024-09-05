@@ -34,7 +34,7 @@ f.write(preamble)
 for i in range(len(points)):
     f.write('      - name: Autograding test %d\n' % (i))
     f.write('        id: assign%d\n' % points[i])
-    f.write('        uses: classroom-resources/autograding-python-grader@v1\n')
+    f.write('        uses: classroom-resources/autograding-command-grader@v1\n')
     f.write('        with:\n')
     f.write('          test-name: \'%d%% credit\'\n' % points[i])
     f.write('          setup-command: \'pip3 install -r .grader/requirements.txt\'\n')
