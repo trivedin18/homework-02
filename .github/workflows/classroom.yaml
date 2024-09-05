@@ -1,0 +1,80 @@
+name: Autograding Tests
+on:
+  - push
+  - workflow_dispatch
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Autograding test 0
+        id: assign60
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '60% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-60.py'
+          timeout: 10
+          max-score: 60
+      - name: Autograding test 1
+        id: assign70
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '70% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-70.py'
+          timeout: 10
+          max-score: 70
+      - name: Autograding test 2
+        id: assign80
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '80% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-80.py'
+          timeout: 10
+          max-score: 80
+      - name: Autograding test 3
+        id: assign90
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '90% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-90.py'
+          timeout: 10
+          max-score: 90
+      - name: Autograding test 4
+        id: assign95
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '95% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-95.py'
+          timeout: 10
+          max-score: 95
+      - name: Autograding test 5
+        id: assign100
+        uses: classroom-resources/autograding-python-grader@v1
+        with:
+          test-name: '100% credit'
+          setup-command: 'pip3 install -r .grader/requirements.txt'
+          command: 'pytest .grader/test-100.py'
+          timeout: 10
+          max-score: 100
+      - name: Autograding Reporter
+        uses: classroom-resources/autograding-grading-reporter@v1
+        env:
+          ASSIGN60_RESULTS: "${{steps.assign60.outputs.result}}"
+          ASSIGN70_RESULTS: "${{steps.assign70.outputs.result}}"
+          ASSIGN80_RESULTS: "${{steps.assign80.outputs.result}}"
+          ASSIGN90_RESULTS: "${{steps.assign90.outputs.result}}"
+          ASSIGN95_RESULTS: "${{steps.assign95.outputs.result}}"
+          ASSIGN100_RESULTS: "${{steps.assign100.outputs.result}}"
+        with:
+          runners: assign60, assign70, assign80, assign90, assign95, assign100
