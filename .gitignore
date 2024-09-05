@@ -4,3 +4,6 @@ __pycache__
 .DS_Store
 */.DS_Store
 */*/.DS_Store
+.pytest_cache
+.grader/sol
+.grader/__pycache__
