@@ -2,7 +2,7 @@
 
 ## Due 2024-09-12 at 11:59pm
 
-In this assignment you'll get more familiar with reading files and working with lists and learn the basics of [matplotlib](http://matplotlib.org/), a powerful and high-quality graphing library. The goal is to plot changes in cell counts over time under different conditions. All the input and output files used in the assignment can be found in the [files directory](files/) of this repository.  If you aren't getting identical images to the solution, you can compare your output to these images using an [image comparison tool](https://www.diffchecker.com/image-compare/).  
+In this assignment you'll get more familiar with reading files and working with lists and learn the basics of [matplotlib](http://matplotlib.org/), a powerful and high-quality graphing library. The goal is to plot changes in cell counts over time under different conditions. All the input files used in the assignment can be found in the home directory of this repository. If you aren't getting identical images to the solution, you can compare your output to these images using an [image comparison tool](https://www.diffchecker.com/image-compare/).  
 
 Note the expectation is that you will generate an identical graph to the provided outputs. You should be able to achieve this by sticking with matplotlib defaults unless otherwise specified. If you have a solution that looks identical to the output but the grading script thinks it is different, let me know. Import matplotlib like this:
 
