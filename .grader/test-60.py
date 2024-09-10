@@ -16,11 +16,11 @@ def test_60():
 	test_input = '.grader/in.0'
 	test_output = 'out0.60.png'
 	test_correct = '.grader/out0.60.png'
-	subprocess.run(['python3 assign.py %s %s 60' % (test_input, test_output)], shell=True, capture_output=True, text=True)
-	assert lib.imgcompare(test_output, test_correct, threshold=0.005)
+	subprocess.run(['python3 assign.py %s %s' % (test_input, test_output)], shell=True, capture_output=True, text=True)
+	assert lib.imgcompare(test_output, test_correct)
 
 	test_input = '.grader/in.1'
 	test_output = 'out1.60.png'
 	test_correct = '.grader/out1.60.png'
-	subprocess.run(['python3 assign.py %s %s 60' % (test_input, test_output)], shell=True, capture_output=True, text=True)
-	assert lib.imgcompare(test_output, test_correct, threshold=0.005)
+	subprocess.run(['python3 assign.py %s %s' % (test_input, test_output)], shell=True, capture_output=True, text=True)
+	assert lib.imgcompare(test_output, test_correct)

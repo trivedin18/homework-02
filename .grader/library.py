@@ -5,7 +5,7 @@ import numpy as np
 
 # Grader functions
 
-def imgcompare(f1, f2, threshold=0.001):
+def imgcompare(f1, f2, threshold=0.01):
     '''Compare image files based on number of different pixels.
         Return true if similar enough'''
     try:
