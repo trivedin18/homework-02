@@ -13,14 +13,16 @@ def test_95():
 		print('assign.py does not exist')
 		sys.exit(1)
 
+	temp_command = '95'
+
 	test_input = '.grader/mc.0 .grader/mc.1 .grader/mc.2'
 	test_output = 'out0.95.png'
 	test_correct = '.grader/out0.95.png'
-	subprocess.run(['python3 assign.py %s %s' % (test_input, test_output)], shell=True, capture_output=True, text=True)
+	subprocess.run(['python3 assign.py %s %s %s' % (test_input, test_output, temp_command)], shell=True, capture_output=True, text=True)
 	assert lib.imgcompare(test_output, test_correct)
 
 	test_input = '.grader/mc2.0 .grader/mc2.1 .grader/mc2.2'
 	test_output = 'out1.95.png'
 	test_correct = '.grader/out1.95.png'
-	subprocess.run(['python3 assign.py %s %s' % (test_input, test_output)], shell=True, capture_output=True, text=True)
+	subprocess.run(['python3 assign.py %s %s %s' % (test_input, test_output, temp_command)], shell=True, capture_output=True, text=True)
 	assert lib.imgcompare(test_output, test_correct)
