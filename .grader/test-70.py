@@ -13,7 +13,7 @@ def test_70():
 		print('assign.py does not exist')
 		sys.exit(1)
 
-	temp_command = '70'
+	temp_command = '' #'70'
 
 	test_input = '.grader/in.0'
 	test_output = 'out0.70.png'

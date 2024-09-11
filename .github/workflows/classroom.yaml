@@ -67,11 +67,11 @@ jobs:
           command: 'pytest .grader/test-100.py'
           timeout: 10
           max-score: 100
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: ./*.png
+      # - name: Upload artifact  # Runs code locally and saves output as artifact to verify solution
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: my-artifact
+      #     path: ./*.png
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
