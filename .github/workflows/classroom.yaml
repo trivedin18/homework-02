@@ -67,6 +67,11 @@ jobs:
           command: 'pytest .grader/test-100.py'
           timeout: 10
           max-score: 100
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: *.png
       - name: Autograding Reporter
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
@@ -78,9 +83,3 @@ jobs:
           ASSIGN100_RESULTS: "${{steps.assign100.outputs.result}}"
         with:
           runners: assign60, assign70, assign80, assign90, assign95, assign100
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Add build artifact
-          title: Add build artifact
