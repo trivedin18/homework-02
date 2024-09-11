@@ -78,3 +78,10 @@ jobs:
           ASSIGN100_RESULTS: "${{steps.assign100.outputs.result}}"
         with:
           runners: assign60, assign70, assign80, assign90, assign95, assign100
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: data_build
+          FOLDER: local
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
